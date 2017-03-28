@@ -1,4 +1,4 @@
-DEVICE_TREE := device/samsung/hero2qltechn
+DEVICE_TREE := device/samsung/hero2ltevzw
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -29,12 +29,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-#TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := twrp_defconfig
-TARGET_KERNEL_DEVICE_DEFCONFIG := device_hero2qlte_chnzc
-
 TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image.gz
 TARGET_PREBUILT_DTB := $(DEVICE_TREE)/dtb.img
 
@@ -43,7 +37,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.bootd
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 4096
 # 000RU = recovery kernel, 000KU = system kernel
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --board RILPA14A000RU
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --board SRPPA14B001RU
 BOARD_CUSTOM_BOOTIMG_MK :=  $(DEVICE_TREE)/bootimg.mk
 
 # Partitions
@@ -58,6 +52,11 @@ BOARD_FLASH_BLOCK_SIZE := 0x40000
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+#TWRP (optional)
+#ifeq ($(WITH_TWRP),true)
+#-include device/samsung/hero2ltevzw/twrp.mk
+#endif
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -92,6 +91,6 @@ TW_EXTRA_LANGUAGES := true
 
 # Init properties from bootloader version, ex. model info
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_hero2qltechn
-TARGET_RECOVERY_DEVICE_MODULES := libinit_hero2qltechn
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_TREE)/init/init_hero2qltechn.cpp
+# TARGET_INIT_VENDOR_LIB := libinit_hero2qltechn
+# TARGET_RECOVERY_DEVICE_MODULES := libinit_hero2qltechn
+# TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_TREE)/init/init_hero2qltechn.cpp

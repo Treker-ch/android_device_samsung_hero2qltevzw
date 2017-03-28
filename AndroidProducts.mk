@@ -1,1 +1,3 @@
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_hero2qltechn.mk
+PRODUCT_MAKEFILES := \
+	$(LOCAL_DIR)/lineage_hero2ltevzw.mk
+

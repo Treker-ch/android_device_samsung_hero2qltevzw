@@ -1255,9 +1255,6 @@
 /dev/timerirq	u:object_r:timerirq_device:s0
 /dev/ttyGS[0-9]*	u:object_r:usb_serial_device:s0
 /dev/ttyUSB[0-9]*	u:object_r:usb_device:s0
-# SEA_site_M#92; requested by jh21.hwang
-# the B2B client requests some specific path range such as /dev/ttyUSB0 ~ /dev/ttyUSB30, /dev/ttyACM0 ~ /dev/ttyACM30
-/dev/ttyACM[0-9]*	u:object_r:usb_device:s0
 /dev/t-base-tui                    u:object_r:tui_device:s0
 /dev/tuihw	u:object_r:tz_device:s0
 /dev/tzdev	u:object_r:tz_device:s0

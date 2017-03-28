@@ -39,13 +39,13 @@ void vendor_load_properties()
 
 	property_get("ro.bootloader", bootloader);
 
-	if (strstr(bootloader, "G9350ZH")) {
-		/* Hong Kong */
-		property_set("ro.product.name", "hero2qltezh");
+	if (strstr(bootloader, "G935V")) {
+		/* Verizon */
+		property_set("ro.product.name", "hero2ltevzw");
 	} else {
 		/* all other variants become China Open */
 		property_set("ro.product.name", "hero2qltezc");
 	}
-	property_set("ro.product.model", "SM-G9350");
-	property_set("ro.product.device", "hero2qltechn");
+	property_set("ro.product.model", "SM-G935V");
+	property_set("ro.product.device", "hero2ltevzw");
 }
