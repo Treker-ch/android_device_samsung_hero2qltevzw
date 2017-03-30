@@ -1,3 +1,3 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_hero2ltevzw.mk
+	$(LOCAL_DIR)/lineage_hero2qltevzw.mk
 

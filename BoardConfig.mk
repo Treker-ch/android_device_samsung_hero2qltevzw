@@ -1,4 +1,4 @@
-DEVICE_TREE := device/samsung/hero2ltevzw
+DEVICE_TREE := device/samsung/hero2qltevzw
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -29,8 +29,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image.gz
-TARGET_PREBUILT_DTB := $(DEVICE_TREE)/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilts/Image.gz
+TARGET_PREBUILT_DTB := $(DEVICE_TREE)/prebuilts/dtb.img
 
 # Boot image
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.bootdevice=624000.ufshc androidboot.selinux=permissive user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=24M@0-0xffffffff rcupdate.rcu_expedited=1
@@ -55,7 +55,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 #TWRP (optional)
 #ifeq ($(WITH_TWRP),true)
-#-include device/samsung/hero2ltevzw/twrp.mk
+#-include device/samsung/hero2qltevzw/twrp.mk
 #endif
 
 # TWRP specific build flags

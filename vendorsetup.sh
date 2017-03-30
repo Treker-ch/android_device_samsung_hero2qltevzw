@@ -1,1 +1,1 @@
-add_lunch_combo lineage_hero2ltevzw-eng
+add_lunch_combo lineage_hero2qltevzw-eng
