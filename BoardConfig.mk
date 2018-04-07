@@ -26,19 +26,22 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+# TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilts/Image.gz
-TARGET_PREBUILT_DTB := $(DEVICE_TREE)/prebuilts/dtb.img
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+# TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilts/Image.gz
+# TARGET_PREBUILT_DTB := $(DEVICE_TREE)/prebuilts/dtb.img
 
 # Boot image
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.bootdevice=624000.ufshc androidboot.selinux=permissive user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=24M@0-0xffffffff rcupdate.rcu_expedited=1
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 4096
 # 000RU = recovery kernel, 000KU = system kernel
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --board SRPPA14B001RU
-BOARD_CUSTOM_BOOTIMG_MK :=  $(DEVICE_TREE)/bootimg.mk
+# BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --board SRPPA14B001RU
+# BOARD_CUSTOM_BOOTIMG_MK :=  $(DEVICE_TREE)/bootimg.mk
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x004C00000
@@ -57,6 +60,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 #ifeq ($(WITH_TWRP),true)
 #-include device/samsung/hero2qltevzw/twrp.mk
 #endif
+
+# Safestrap build flags
+COMMON_GLOBAL_CFLAGS += -DBUILD_SAFESTRAP
+COMMON_GLOBAL_CPPFLAGS += -DBUILD_SAFESTRAP
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
